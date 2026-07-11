@@ -1,28 +1,32 @@
 /* ===== CSS variables (themes) ===== */
-/* Palette: #393e41 · #d3d0cb · #e7e5df · #44bba4 · #e7bb41 */
+/* Palette: #cdb4db · #ffc8dd · #ffafcc · #bde0fe · #a2d2ff */
 :root {
   color-scheme: dark;
-  --color-charcoal: #393e41;
-  --color-warm-gray: #d3d0cb;
-  --color-cream: #e7e5df;
-  --color-teal: #44bba4;
-  --color-gold: #e7bb41;
-  --bg: var(--color-charcoal);
-  --bg-elevated: #44494d;
-  --bg-soft: #323639;
-  --text: var(--color-cream);
-  --text-muted: var(--color-warm-gray);
-  --accent: var(--color-teal);
-  --accent-secondary: var(--color-gold);
-  --accent-soft: rgba(68, 187, 164, 0.16);
-  --accent-secondary-soft: rgba(231, 187, 65, 0.14);
-  --border: rgba(231, 229, 223, 0.14);
-  --shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
-  --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.18);
-  --header-bg: rgba(57, 62, 65, 0.82);
-  --thumb-1: linear-gradient(135deg, #44bba4 0%, #358f7d 100%);
-  --thumb-2: linear-gradient(135deg, #44bba4 0%, #e7bb41 100%);
-  --thumb-3: linear-gradient(135deg, #e7bb41 0%, #c9a028 100%);
+  --color-lavender: #cdb4db;
+  --color-pink-light: #ffc8dd;
+  --color-pink: #ffafcc;
+  --color-blue-light: #bde0fe;
+  --color-blue: #a2d2ff;
+  --color-on-accent: #3d3550;
+  --bg: #2a2238;
+  --bg-elevated: #352d45;
+  --bg-soft: #221c2e;
+  --text: #fdf6fa;
+  --text-muted: var(--color-lavender);
+  --accent: var(--color-pink);
+  --accent-secondary: var(--color-blue);
+  --accent-tertiary: var(--color-pink-light);
+  --accent-soft: rgba(162, 210, 255, 0.18);
+  --accent-secondary-soft: rgba(255, 175, 204, 0.14);
+  --accent-tertiary-soft: rgba(205, 180, 219, 0.18);
+  --accent-border: rgba(255, 175, 204, 0.38);
+  --border: rgba(205, 180, 219, 0.22);
+  --shadow: 0 24px 64px rgba(20, 14, 30, 0.45);
+  --shadow-sm: 0 8px 24px rgba(20, 14, 30, 0.3);
+  --header-bg: rgba(42, 34, 56, 0.9);
+  --thumb-1: linear-gradient(135deg, #a2d2ff 0%, #cdb4db 100%);
+  --thumb-2: linear-gradient(135deg, #ffc8dd 0%, #ffafcc 100%);
+  --thumb-3: linear-gradient(135deg, #bde0fe 0%, #a2d2ff 100%);
   --radius: 20px;
   --radius-sm: 12px;
   --radius-pill: 999px;
@@ -35,22 +39,25 @@
 
 html[data-theme="light"] {
   color-scheme: light;
-  --bg: var(--color-cream);
+  --bg: #faf6fc;
   --bg-elevated: #ffffff;
-  --bg-soft: #f0eeea;
-  --text: var(--color-charcoal);
-  --text-muted: #6b7074;
-  --accent: #3aa892;
-  --accent-secondary: #c9a028;
-  --accent-soft: rgba(68, 187, 164, 0.12);
-  --accent-secondary-soft: rgba(231, 187, 65, 0.14);
-  --border: rgba(57, 62, 65, 0.1);
-  --shadow: 0 24px 64px rgba(57, 62, 65, 0.1);
-  --shadow-sm: 0 8px 24px rgba(57, 62, 65, 0.06);
-  --header-bg: rgba(231, 229, 223, 0.9);
-  --thumb-1: linear-gradient(135deg, #44bba4 0%, #358f7d 100%);
-  --thumb-2: linear-gradient(135deg, #44bba4 0%, #e7bb41 100%);
-  --thumb-3: linear-gradient(135deg, #e7bb41 0%, #d4a82e 100%);
+  --bg-soft: #f4f0fa;
+  --text: var(--color-on-accent);
+  --text-muted: #6b5f7a;
+  --accent: var(--color-pink);
+  --accent-secondary: #7a9fd4;
+  --accent-tertiary: #9b87b0;
+  --accent-soft: rgba(162, 210, 255, 0.22);
+  --accent-secondary-soft: rgba(255, 200, 221, 0.35);
+  --accent-tertiary-soft: rgba(205, 180, 219, 0.28);
+  --accent-border: rgba(255, 175, 204, 0.55);
+  --border: rgba(205, 180, 219, 0.35);
+  --shadow: 0 24px 64px rgba(61, 53, 80, 0.08);
+  --shadow-sm: 0 8px 24px rgba(61, 53, 80, 0.05);
+  --header-bg: rgba(250, 246, 252, 0.92);
+  --thumb-1: linear-gradient(135deg, #a2d2ff 0%, #cdb4db 100%);
+  --thumb-2: linear-gradient(135deg, #ffc8dd 0%, #ffafcc 100%);
+  --thumb-3: linear-gradient(135deg, #bde0fe 0%, #a2d2ff 100%);
 }
 
 /* ===== Reset & base ===== */
@@ -134,7 +141,7 @@ button {
   top: -100%;
   padding: 0.5rem 1rem;
   background: var(--accent);
-  color: var(--bg);
+  color: var(--color-on-accent);
   font-weight: 600;
   border-radius: var(--radius-sm);
   z-index: 1000;
@@ -214,7 +221,7 @@ button {
 
 .btn--primary {
   background: var(--accent);
-  color: var(--color-charcoal);
+  color: var(--color-on-accent);
   border-color: var(--accent);
 }
 
@@ -230,8 +237,8 @@ button {
 }
 
 .btn--secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--accent-tertiary);
+  color: var(--accent-tertiary);
   transform: translateY(-2px);
 }
 
@@ -265,7 +272,7 @@ button {
 }
 
 .logo:hover {
-  color: var(--accent);
+  color: var(--accent-secondary);
 }
 
 .header-actions {
@@ -348,7 +355,7 @@ button {
 }
 
 .nav-list a:hover {
-  background: var(--accent-soft);
+  background: var(--accent-secondary-soft);
   color: var(--accent);
 }
 
@@ -370,10 +377,12 @@ button {
   height: 1.1rem;
   border-radius: 50%;
   background: conic-gradient(
-    var(--accent) 0deg,
-    var(--accent-secondary) 120deg,
-    var(--text-muted) 240deg,
-    var(--bg-elevated) 360deg
+    var(--color-pink-light) 0deg,
+    var(--color-pink) 72deg,
+    var(--color-blue-light) 144deg,
+    var(--color-blue) 216deg,
+    var(--color-lavender) 288deg,
+    var(--color-pink-light) 360deg
   );
   box-shadow: inset 0 0 0 2px var(--bg);
 }
@@ -453,9 +462,9 @@ button {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
+  color: var(--accent);
+  background: var(--accent-secondary-soft);
+  border: 1px solid var(--accent-border);
   border-radius: var(--radius-pill);
 }
 
@@ -502,6 +511,11 @@ button {
       circle at 70% 70%,
       var(--accent-secondary-soft),
       transparent 55%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      var(--accent-tertiary-soft),
+      transparent 45%
     );
 }
 
@@ -509,8 +523,13 @@ button {
   position: absolute;
   inset: 18%;
   border-radius: 50%;
-  background: var(--bg-elevated);
-  border: 1px dashed var(--border);
+  background: radial-gradient(
+      circle at 40% 35%,
+      rgba(255, 175, 204, 0.14),
+      transparent 60%
+    ),
+    var(--bg-elevated);
+  border: 1px solid rgba(205, 180, 219, 0.35);
   box-shadow: var(--shadow-sm);
 }
 
@@ -548,7 +567,7 @@ button {
 
 .stat-item:hover {
   transform: translateY(-4px);
-  border-color: rgba(68, 187, 164, 0.35);
+  border-color: var(--accent-border);
 }
 
 .stat-value {
@@ -558,7 +577,7 @@ button {
   letter-spacing: -0.03em;
   line-height: 1;
   margin-bottom: 0.5rem;
-  color: var(--accent);
+  color: var(--accent-secondary);
 }
 
 .stat-label {
@@ -602,7 +621,7 @@ button {
 
 .feature-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(68, 187, 164, 0.4);
+  border-color: var(--accent-border);
   box-shadow: var(--shadow-sm);
 }
 
@@ -647,7 +666,7 @@ button {
 
 .project-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(68, 187, 164, 0.45);
+  border-color: var(--accent-border);
   box-shadow: var(--shadow);
 }
 
@@ -695,8 +714,8 @@ button {
   font-weight: 700;
   padding: 0.3rem 0.7rem;
   border-radius: var(--radius-pill);
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--accent-tertiary-soft);
+  color: var(--accent-tertiary);
 }
 
 /* ===== Skills ===== */
@@ -727,7 +746,7 @@ button {
 
 .skill-card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent);
+  border-color: var(--accent-border);
   box-shadow: var(--shadow-sm);
 }
 
@@ -735,8 +754,8 @@ button {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
-  background: var(--accent-soft);
-  border: 1px solid rgba(68, 187, 164, 0.25);
+  background: var(--accent-secondary-soft);
+  border: 1px solid rgba(162, 210, 255, 0.35);
   position: relative;
 }
 
@@ -745,7 +764,7 @@ button {
   position: absolute;
   inset: 0.65rem;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--accent-secondary);
 }
 
 .skill-card__name {
@@ -773,7 +792,7 @@ button {
 
 .experience-item:hover {
   transform: translateX(6px);
-  border-color: rgba(68, 187, 164, 0.35);
+  border-color: var(--accent-border);
 }
 
 .experience-item__meta {
@@ -837,7 +856,8 @@ button {
   background: linear-gradient(
     135deg,
     var(--bg-elevated) 0%,
-    var(--bg-soft) 100%
+    var(--bg-soft) 55%,
+    rgba(189, 224, 254, 0.22) 100%
   );
   box-shadow: var(--shadow-sm);
 }
@@ -891,7 +911,7 @@ button {
 .footer-email {
   display: inline-block;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-tertiary);
   margin-bottom: 0.75rem;
 }
 
@@ -928,7 +948,7 @@ button {
 
 .footer-nav a:hover,
 .social-list a:hover {
-  color: var(--accent);
+  color: var(--accent-secondary);
 }
 
 .footer-bottom {
